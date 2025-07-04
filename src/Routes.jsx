@@ -6,7 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 
 // Pages
 import Home from "./pages/Home";
-import MapPage from "pages/Map"; // ✅ This is your Leaflet map
+import MapPage from "./pages/Map";
 import CsvDataUpload from "./pages/csv-data-upload";
 import StationDetailsModal from "./pages/station-details-modal";
 import SettingsAndDataManagement from "./pages/settings-and-data-management";

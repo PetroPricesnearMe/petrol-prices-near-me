@@ -3,14 +3,13 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { fetchFuelStations } from '../utils/airtable';
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import FloatingSearchBar from '../components/FloatingSearchBar';
 import FloatingActionButton from '../components/FloatingActionButton';
 import StationInfoPanel from '../components/StationInfoPanel';
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
-// Fix leaflet icon bug on Vite/Vercel
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: markerIcon2x,
@@ -23,30 +22,45 @@ export default function MapPage() {
   const [selectedStation, setSelectedStation] = useState(null);
 
   useEffect(() => {
-    fetchFuelStations().then(setStations);
+    fetchFuelStations().then((data) => {
+      console.log("Fetched stations:", data); // debug
+      setStations(data);
+    });
   }, []);
 
   return (
     <div style={{ height: '100vh', width: '100vw' }}>
-      <MapContainer center={[-37.8136, 144.9631]} zoom={12} style={{ height: '100%', width: '100%' }}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap contributors"
-        />
-
-        {stations.map((station) => (
-          <Marker
-            key={station.id}
-            position={[station.Latitude, station.Longitude]}
-            eventHandlers={{
-              click: () => setSelectedStation(station),
-            }}
-          >
-            <Popup>{station["Station Name"]}</Popup>
-          </Marker>
-        ))}
-      </MapContainer>
-
+      {stations.length === 0 ? (
+        <p className="text-center mt-20 text-lg">Loading map data...</p>
+      ) : (
+        <MapContainer center={[-37.8136, 144.9631]} zoom={12} style={{ height: '100%', width: '100%' }}>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="&copy; OpenStreetMap contributors"
+          />
+          {stations
+            .filter(station => station.Latitude && station.Longitude)
+            .map(station => (
+              <Marker
+                key={station.id}
+                position={[station.Latitude, station.Longitude]}
+                eventHandlers={{
+                  click: () => setSelectedStation(station),
+                }}
+              >
+                <Popup>
+                  <strong>{station["Station Name"] ?? "Unknown Station"}</strong><br />
+                  {station.Address ?? "No Address"}, {station.City ?? "Unknown City"}<br />
+                  {station["Price Per Liter (from Fuel Prices)"] ? (
+                    <span>💲 {station["Price Per Liter (from Fuel Prices)"]} per L</span>
+                  ) : (
+                    <span>No price listed</span>
+                  )}
+                </Popup>
+              </Marker>
+            ))}
+        </MapContainer>
+      )}
       <FloatingSearchBar />
       <FloatingActionButton />
       {selectedStation && (
