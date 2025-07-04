@@ -4,9 +4,9 @@ import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import ErrorBoundary from "./components/ErrorBoundary";
 
-// Pages - Using relative imports
+// Pages
 import Home from "./pages/Home";
-import MapDashboard from "./pages/map-dashboard";
+import MapPage from "pages/Map"; // ✅ This is your Leaflet map
 import CsvDataUpload from "./pages/csv-data-upload";
 import StationDetailsModal from "./pages/station-details-modal";
 import SettingsAndDataManagement from "./pages/settings-and-data-management";
@@ -20,7 +20,7 @@ const Routes = () => {
         <ScrollToTop />
         <RouterRoutes>
           <Route path="/" element={<Home />} />
-          <Route path="/map-dashboard" element={<MapDashboard />} />
+          <Route path="/map-dashboard" element={<MapPage />} />
           <Route path="/csv-data-upload" element={<CsvDataUpload />} />
           <Route path="/station-details-modal" element={<StationDetailsModal />} />
           <Route path="/settings-and-data-management" element={<SettingsAndDataManagement />} />

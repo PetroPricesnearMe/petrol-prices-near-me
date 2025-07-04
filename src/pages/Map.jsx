@@ -1,51 +1,57 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { fetchFuelStations } from '../utils/airtable';
-import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import { fetchFuelStations } from '../utils/airtable';
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import FloatingSearchBar from '../components/FloatingSearchBar';
+import FloatingActionButton from '../components/FloatingActionButton';
+import StationInfoPanel from '../components/StationInfoPanel';
 
-// Fix missing marker icons
+// Fix leaflet icon bug on Vite/Vercel
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png',
-  iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png',
+  iconRetinaUrl: markerIcon2x,
+  iconUrl: markerIcon,
+  shadowUrl: markerShadow,
 });
 
 export default function MapPage() {
   const [stations, setStations] = useState([]);
+  const [selectedStation, setSelectedStation] = useState(null);
 
   useEffect(() => {
-    fetchFuelStations().then(data => setStations(data));
+    fetchFuelStations().then(setStations);
   }, []);
 
   return (
-    <div className="w-full h-[90vh]">
-      <h1 className="text-2xl font-bold p-4">Melbourne Fuel Station Map</h1>
-
-      <MapContainer center={[-37.8136, 144.9631]} zoom={10} className="w-full h-full">
+    <div style={{ height: '100vh', width: '100vw' }}>
+      <MapContainer center={[-37.8136, 144.9631]} zoom={12} style={{ height: '100%', width: '100%' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; OpenStreetMap contributors'
+          attribution="&copy; OpenStreetMap contributors"
         />
 
-        {stations
-          .filter(s => s.Latitude && s.Longitude)
-          .map(station => (
-            <Marker
-              key={station.id}
-              position={[parseFloat(station.Latitude), parseFloat(station.Longitude)]}
-            >
-              <Popup>
-                <strong>{station["Station Name"]}</strong><br />
-                {station.Address}, {station.City}<br />
-                {station["Price Per Liter (from Fuel Prices)"] && (
-                  <span>💲 {station["Price Per Liter (from Fuel Prices)"]} per L</span>
-                )}
-              </Popup>
-            </Marker>
-          ))}
+        {stations.map((station) => (
+          <Marker
+            key={station.id}
+            position={[station.Latitude, station.Longitude]}
+            eventHandlers={{
+              click: () => setSelectedStation(station),
+            }}
+          >
+            <Popup>{station["Station Name"]}</Popup>
+          </Marker>
+        ))}
       </MapContainer>
+
+      <FloatingSearchBar />
+      <FloatingActionButton />
+      {selectedStation && (
+        <StationInfoPanel station={selectedStation} onClose={() => setSelectedStation(null)} />
+      )}
     </div>
   );
 }
