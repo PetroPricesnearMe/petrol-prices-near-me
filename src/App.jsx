@@ -5,6 +5,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Map from './pages/Map';
 import Header from './components/Header';
+import Prices from './pages/Prices';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/map" element={<Map />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+		<Route path="/prices" element={<Prices />} />
       </Routes>
     </div>
   );
