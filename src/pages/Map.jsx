@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { fetchFuelStations } from '../utils/airtable';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
-export default function Map() {
+// Fix missing marker icons
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.3/dist/images/marker-shadow.png',
+});
+
+export default function MapPage() {
   const [stations, setStations] = useState([]);
 
   useEffect(() => {
@@ -9,29 +20,32 @@ export default function Map() {
   }, []);
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">Fuel Stations</h1>
+    <div className="w-full h-[90vh]">
+      <h1 className="text-2xl font-bold p-4">Melbourne Fuel Station Map</h1>
 
-      {stations.length === 0 ? (
-        <p>Loading station data...</p>
-      ) : (
-        <ul className="space-y-4">
-          {stations.map(station => (
-            <li key={station.id} className="border-b pb-4">
-              <h2 className="text-xl font-semibold">{station["Station Name"]}</h2>
-              <p>
-                {station["Address"]}, {station["City"]} {station["Postal Code"]}, {station["Region"]}, {station["Country"]}
-              </p>
-              <p>📍 Latitude: {station["Latitude"]}, Longitude: {station["Longitude"]}</p>
-              <p>⛽ Category: {station["Category"]}</p>
-              <p>🛢 Fuel Prices: {station["Fuel Prices"]}</p>
-              <p>💲 Price per Liter: ${station["Price Per Liter (from Fuel Prices)"]}</p>
-              <p>ℹ️ {station["Location Details"]}</p>
-            </li>
+      <MapContainer center={[-37.8136, 144.9631]} zoom={10} className="w-full h-full">
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; OpenStreetMap contributors'
+        />
+
+        {stations
+          .filter(s => s.Latitude && s.Longitude)
+          .map(station => (
+            <Marker
+              key={station.id}
+              position={[parseFloat(station.Latitude), parseFloat(station.Longitude)]}
+            >
+              <Popup>
+                <strong>{station["Station Name"]}</strong><br />
+                {station.Address}, {station.City}<br />
+                {station["Price Per Liter (from Fuel Prices)"] && (
+                  <span>💲 {station["Price Per Liter (from Fuel Prices)"]} per L</span>
+                )}
+              </Popup>
+            </Marker>
           ))}
-        </ul>
-      )}
+      </MapContainer>
     </div>
   );
 }
-

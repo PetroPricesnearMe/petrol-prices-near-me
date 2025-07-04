@@ -2,6 +2,11 @@
   "name": "melbourne_fuel_finder",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --sourcemap",
+    "serve": "vite preview"
+  },
   "dependencies": {
     "@dhiwise/component-tagger": "^1.0.9",
     "@reduxjs/toolkit": "^2.6.1",
@@ -14,11 +19,13 @@
     "date-fns": "^4.1.0",
     "dotenv": "^16.0.1",
     "framer-motion": "^10.16.4",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.484.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.55.0",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "6.0.2",
     "react-router-hash-link": "^2.4.3",
     "recharts": "^2.15.2",
@@ -27,10 +34,17 @@
     "tailwindcss-elevation": "^2.0.0",
     "tailwindcss-fluid-type": "^2.0.7"
   },
-  "scripts": {
-    "start": "vite",
-    "build": "vite build --sourcemap",
-    "serve": "vite preview"
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/line-clamp": "^0.1.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@vitejs/plugin-react": "4.3.4",
+    "autoprefixer": "10.4.2",
+    "postcss": "8.4.8",
+    "tailwindcss": "3.4.6",
+    "vite": "5.0.0",
+    "vite-tsconfig-paths": "3.6.0"
   },
   "eslintConfig": {
     "extends": [
@@ -49,17 +63,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/line-clamp": "^0.1.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@vitejs/plugin-react": "4.3.4",
-    "autoprefixer": "10.4.2",
-    "postcss": "8.4.8",
-    "tailwindcss": "3.4.6",
-    "vite": "5.0.0",
-    "vite-tsconfig-paths": "3.6.0"
   }
 }

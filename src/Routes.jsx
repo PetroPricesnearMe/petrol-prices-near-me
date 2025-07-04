@@ -1,8 +1,11 @@
+// src/Routes.jsx
 import React from "react";
 import { BrowserRouter, Routes as RouterRoutes, Route } from "react-router-dom";
 import ScrollToTop from "components/ScrollToTop";
 import ErrorBoundary from "components/ErrorBoundary";
-// Add your imports here
+
+// Pages
+import Home from "pages/Home";
 import MapDashboard from "pages/map-dashboard";
 import CsvDataUpload from "pages/csv-data-upload";
 import StationDetailsModal from "pages/station-details-modal";
@@ -14,17 +17,16 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-      <ScrollToTop />
-      <RouterRoutes>
-        {/* Define your routes here */}
-        <Route path="/" element={<MapDashboard />} />
-        <Route path="/map-dashboard" element={<MapDashboard />} />
-        <Route path="/csv-data-upload" element={<CsvDataUpload />} />
-        <Route path="/station-details-modal" element={<StationDetailsModal />} />
-        <Route path="/settings-and-data-management" element={<SettingsAndDataManagement />} />
-        <Route path="/search-and-filter-interface" element={<SearchAndFilterInterface />} />
-        <Route path="*" element={<NotFound />} />
-      </RouterRoutes>
+        <ScrollToTop />
+        <RouterRoutes>
+          <Route path="/" element={<Home />} /> {/* ✅ THIS is now your homepage */}
+          <Route path="/map-dashboard" element={<MapDashboard />} />
+          <Route path="/csv-data-upload" element={<CsvDataUpload />} />
+          <Route path="/station-details-modal" element={<StationDetailsModal />} />
+          <Route path="/settings-and-data-management" element={<SettingsAndDataManagement />} />
+          <Route path="/search-and-filter-interface" element={<SearchAndFilterInterface />} />
+          <Route path="*" element={<NotFound />} />
+        </RouterRoutes>
       </ErrorBoundary>
     </BrowserRouter>
   );
