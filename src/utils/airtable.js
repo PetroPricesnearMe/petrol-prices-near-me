@@ -7,6 +7,10 @@ const VIEW_ID = "viwZbnqGr4ujOyjDd";
 export async function fetchFuelStations() {
   const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${TABLE_NAME}?view=${VIEW_ID}`;
 
+  // ✅ Debug logs
+  console.log("Airtable fetch URL:", url);
+  console.log("Using API key:", AIRTABLE_API_KEY);
+
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${AIRTABLE_API_KEY}`,
@@ -25,4 +29,3 @@ export async function fetchFuelStations() {
     ...record.fields,
   }));
 }
-
