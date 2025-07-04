@@ -1,23 +1,23 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
-import tagger from "@dhiwise/component-tagger";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-// https://vitejs.dev/config/
+// For .mjs files, you need this to get __dirname
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
 export default defineConfig({
-  plugins: [
-    tsconfigPaths(),
-    react(),
-    tagger()
-  ],
-  build: {
-    outDir: "dist", // ✅ Vercel expects this folder
-    chunkSizeWarningLimit: 2000
+  plugins: [react()],
+  resolve: {
+    alias: {
+      'pages': path.resolve(__dirname, 'src/pages'),
+      'components': path.resolve(__dirname, 'src/components'),
+      'utils': path.resolve(__dirname, 'src/utils'),
+      '@': path.resolve(__dirname, 'src'),
+    }
   },
   server: {
-    port: 4028,
-    host: "0.0.0.0",
-    strictPort: true,
-    allowedHosts: [".amazonaws.com", ".builtwithrocket.new"]
+    port: 3000,
+    open: true
   }
-});
+})
