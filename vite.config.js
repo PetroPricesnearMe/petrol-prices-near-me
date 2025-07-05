@@ -18,10 +18,24 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     chunkSizeWarningLimit: 2000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['lucide-react', 'framer-motion'],
+          charts: ['recharts', 'd3'],
+          maps: ['leaflet', 'react-leaflet']
+        }
+      }
+    }
   },
   server: {
     port: 3000,
     host: '0.0.0.0',
     strictPort: true,
   },
+  define: {
+    global: 'globalThis',
+  }
 });
