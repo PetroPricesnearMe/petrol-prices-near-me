@@ -19,7 +19,7 @@ export default function Home() {
     {
       icon: 'TrendingDown',
       title: 'Best Prices',
-      description: 'Compare fuel prices across Melbourne to save money on every fill-up.'
+      description: 'Compare fuel prices across Greater Melbourne to save money on every fill-up.'
     },
     {
       icon: 'Clock',
@@ -122,12 +122,15 @@ export default function Home() {
                   Petrol Prices{' '}
                   <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     Near Me
-                  </span>{' '}
-                  in Melbourne
+                  </span>
                 </h1>
                 
+                <h3 className="text-xl lg:text-2xl font-heading font-semibold text-text-secondary">
+                  Greater Melbourne
+                </h3>
+                
                 <p className="text-lg lg:text-xl text-text-secondary leading-relaxed max-w-2xl">
-                  Compare real-time fuel prices across 1,200+ stations in Melbourne. 
+                  Compare real-time fuel prices across 1,200+ stations in Greater Melbourne. 
                   Save money on every fill-up with our smart price comparison tool.
                 </p>
               </div>
