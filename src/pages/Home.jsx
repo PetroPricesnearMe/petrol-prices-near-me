@@ -53,7 +53,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col">
                 <h1 className="text-lg lg:text-xl font-heading font-bold text-text-primary">
-                  Melbourne Fuel Finder
+                  Petrol Prices Near Me
                 </h1>
                 <p className="text-xs text-text-secondary hidden sm:block">
                   Smart fuel price comparison
@@ -68,6 +68,12 @@ export default function Home() {
                 className="text-text-secondary hover:text-primary transition-colors duration-200 font-medium"
               >
                 Map View
+              </Link>
+              <Link 
+                to="/station-listing" 
+                className="text-text-secondary hover:text-primary transition-colors duration-200 font-medium"
+              >
+                Station List
               </Link>
               <Link 
                 to="/search-and-filter-interface" 
@@ -113,9 +119,9 @@ export default function Home() {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-text-primary leading-tight">
-                  Find the{' '}
+                  Petrol Prices{' '}
                   <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    cheapest fuel
+                    Near Me
                   </span>{' '}
                   in Melbourne
                 </h1>
@@ -140,15 +146,15 @@ export default function Home() {
                   </Button>
                 </Link>
                 
-                <Link to="/search-and-filter-interface">
+                <Link to="/station-listing">
                   <Button
                     variant="outline"
                     size="lg"
-                    iconName="Search"
+                    iconName="List"
                     iconPosition="left"
                     className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 hover:bg-primary hover:text-white transition-all duration-200"
                   >
-                    Advanced Search
+                    Browse Stations
                   </Button>
                 </Link>
               </div>
@@ -247,7 +253,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-heading font-bold text-text-primary mb-4">
-              Why Choose Melbourne Fuel Finder?
+              Why Choose Petrol Prices Near Me?
             </h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">
               Our platform provides comprehensive fuel price comparison with real-time data 
@@ -325,7 +331,7 @@ export default function Home() {
                   <Icon name="Fuel" size={20} color="white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">Melbourne Fuel Finder</h3>
+                  <h3 className="text-lg font-bold">Petrol Prices Near Me</h3>
                   <p className="text-sm text-gray-400">Smart fuel price comparison</p>
                 </div>
               </div>
@@ -341,6 +347,9 @@ export default function Home() {
                 <Link to="/map-dashboard" className="block text-gray-400 hover:text-white transition-colors duration-200">
                   Map View
                 </Link>
+                <Link to="/station-listing" className="block text-gray-400 hover:text-white transition-colors duration-200">
+                  Station List
+                </Link>
                 <Link to="/search-and-filter-interface" className="block text-gray-400 hover:text-white transition-colors duration-200">
                   Search Stations
                 </Link>
@@ -353,7 +362,7 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <div className="space-y-2">
-                <a href="mailto:help@melbournefuelfinder.com.au" className="block text-gray-400 hover:text-white transition-colors duration-200">
+                <a href="mailto:help@petrolpricesnearme.com.au" className="block text-gray-400 hover:text-white transition-colors duration-200">
                   Contact Us
                 </a>
                 <a href="#" className="block text-gray-400 hover:text-white transition-colors duration-200">
@@ -368,7 +377,7 @@ export default function Home() {
           
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
             <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Melbourne Fuel Finder. All rights reserved. 
+              &copy; {new Date().getFullYear()} Petrol Prices Near Me. All rights reserved. 
               Built with ❤️ for Melbourne drivers.
             </p>
           </div>
