@@ -327,7 +327,7 @@ const StationListing = () => {
           </div>
 
           {/* Search and Filter Controls */}
-          <div className="bg-surface rounded-lg border border-border p-4 mb-8">
+          <div className="bg-surface rounded-lg border border-default-border p-4 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Search */}
               <div className="md:col-span-2">
@@ -338,7 +338,7 @@ const StationListing = () => {
                     placeholder="Search stations, addresses, or brands..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+                    className="w-full pl-10 pr-4 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
                   />
                 </div>
               </div>
@@ -348,7 +348,7 @@ const StationListing = () => {
                 <select
                   value={filterBy}
                   onChange={(e) => setFilterBy(e.target.value)}
-                  className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+                  className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
                 >
                   <option value="all">All Brands</option>
                   <option value="shell">Shell</option>
@@ -367,7 +367,7 @@ const StationListing = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+                  className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
                 >
                   <option value="price">Lowest Price</option>
                   <option value="distance">Nearest First</option>
@@ -384,10 +384,10 @@ const StationListing = () => {
               <div
                 key={station.id}
                 onClick={() => handleStationClick(station)}
-                className="bg-surface rounded-lg border border-border hover:border-primary hover:shadow-elevation-3 transition-all duration-200 cursor-pointer group"
+                className="bg-surface rounded-lg border border-default-border hover:border-primary hover:shadow-elevation-3 transition-all duration-200 cursor-pointer group"
               >
                 {/* Station Header */}
-                <div className="p-4 border-b border-border">
+                <div className="p-4 border-b border-default-border">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-text-primary group-hover:text-primary transition-colors duration-200 truncate">
@@ -415,7 +415,7 @@ const StationListing = () => {
                 </div>
 
                 {/* Price Display */}
-                <div className="p-4 border-b border-border">
+                <div className="p-4 border-b border-default-border">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm text-text-secondary">Unleaded 91</p>
