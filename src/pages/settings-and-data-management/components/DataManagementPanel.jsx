@@ -78,8 +78,7 @@ const DataManagementPanel = () => {
                 <span className={`
                   inline-flex items-center px-2 py-1 rounded-md text-xs font-medium
                   ${upload.status === 'active' ?'bg-success-100 text-success-700' :'bg-secondary-100 text-secondary-700'
-                  }
-                `}>
+                  }`}>
                   {upload.status === 'active' ? 'Active' : 'Archived'}
                 </span>
                 <Button
@@ -134,20 +133,21 @@ const DataManagementPanel = () => {
           Storage Usage
         </h4>
         <div className="p-4 bg-surface-secondary rounded-lg border border-border">
-        <div className="p-4 bg-surface-secondary rounded-lg border border-default-border">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-text-secondary">Data Storage</span>
-            <span className="text-sm font-medium text-text-primary">2.4 MB / 50 MB</span>
+          <div className="p-4 bg-surface-secondary rounded-lg border border-default-border">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-text-secondary">Data Storage</span>
+              <span className="text-sm font-medium text-text-primary">2.4 MB / 50 MB</span>
+            </div>
+            <div className="w-full bg-secondary-200 rounded-full h-2">
+              <div 
+                className="bg-primary h-2 rounded-full transition-all duration-300" 
+                style={{ width: '4.8%' }}
+              />
+            </div>
+            <p className="text-xs text-text-muted mt-2">
+              47.6 MB remaining storage available
+            </p>
           </div>
-          <div className="w-full bg-secondary-200 rounded-full h-2">
-            <div 
-              className="bg-primary h-2 rounded-full transition-all duration-300" 
-              style={{ width: '4.8%' }}
-            />
-          </div>
-          <p className="text-xs text-text-muted mt-2">
-            47.6 MB remaining storage available
-          </p>
         </div>
       </div>
 
