@@ -185,4 +185,4 @@ const SearchPanel = ({ isOpen, onClose, onSearch, onFilterChange }) => {
               <select
                 value={sortBy}
                 onChange={(e) => handleInputChange('sortBy', e.target.value)}
-                className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface
+                className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"

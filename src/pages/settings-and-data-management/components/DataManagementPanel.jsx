@@ -132,22 +132,20 @@ const DataManagementPanel = () => {
         <h4 className="text-md font-heading font-medium text-text-primary mb-4">
           Storage Usage
         </h4>
-        <div className="p-4 bg-surface-secondary rounded-lg border border-border">
-          <div className="p-4 bg-surface-secondary rounded-lg border border-default-border">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-text-secondary">Data Storage</span>
-              <span className="text-sm font-medium text-text-primary">2.4 MB / 50 MB</span>
-            </div>
-            <div className="w-full bg-secondary-200 rounded-full h-2">
-              <div 
-                className="bg-primary h-2 rounded-full transition-all duration-300" 
-                style={{ width: '4.8%' }}
-              />
-            </div>
-            <p className="text-xs text-text-muted mt-2">
-              47.6 MB remaining storage available
-            </p>
+        <div className="p-4 bg-surface-secondary rounded-lg border border-default-border">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm text-text-secondary">Data Storage</span>
+            <span className="text-sm font-medium text-text-primary">2.4 MB / 50 MB</span>
           </div>
+          <div className="w-full bg-secondary-200 rounded-full h-2">
+            <div 
+              className="bg-primary h-2 rounded-full transition-all duration-300" 
+              style={{ width: '4.8%' }}
+            />
+          </div>
+          <p className="text-xs text-text-muted mt-2">
+            47.6 MB remaining storage available
+          </p>
         </div>
       </div>
 
