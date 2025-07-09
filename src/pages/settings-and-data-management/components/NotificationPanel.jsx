@@ -92,7 +92,7 @@ const NotificationPanel = ({ notifications, onNotificationChange }) => {
           value={notifications.updateFrequency}
           onChange={(e) => onNotificationChange('updateFrequency', e.target.value)}
           disabled={!notifications.pushEnabled}
-          className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {updateFrequencies.map((freq) => (
             <option key={freq.value} value={freq.value}>
@@ -127,7 +127,7 @@ const NotificationPanel = ({ notifications, onNotificationChange }) => {
                 type="time"
                 value={notifications.quietStart}
                 onChange={(e) => onNotificationChange('quietStart', e.target.value)}
-                className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+                className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
               />
             </div>
             <div>
@@ -138,7 +138,7 @@ const NotificationPanel = ({ notifications, onNotificationChange }) => {
                 type="time"
                 value={notifications.quietEnd}
                 onChange={(e) => onNotificationChange('quietEnd', e.target.value)}
-                className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+                className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
               />
             </div>
           </div>

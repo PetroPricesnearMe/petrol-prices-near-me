@@ -55,7 +55,7 @@ BP Connect,456 Bourke Street,Melbourne,3000,-37.8142,144.9632,BP,1.67,1.77,1.60
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-border">
+                      <tr className="border-b border-default-border">
                         <th className="text-left py-2 px-3 font-medium text-text-primary">Column Name</th>
                         <th className="text-left py-2 px-3 font-medium text-text-primary">Description</th>
                         <th className="text-left py-2 px-3 font-medium text-text-primary">Example</th>
@@ -63,7 +63,7 @@ BP Connect,456 Bourke Street,Melbourne,3000,-37.8142,144.9632,BP,1.67,1.77,1.60
                     </thead>
                     <tbody>
                       {requiredColumns.map((column, index) => (
-                        <tr key={index} className="border-b border-border-light">
+                        <tr key={index} className="border-b border-default-border-light">
                           <td className="py-2 px-3">
                             <code className="bg-secondary-100 px-2 py-1 rounded text-xs font-data">
                               {column.name}

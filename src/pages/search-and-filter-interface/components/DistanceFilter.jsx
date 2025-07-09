@@ -21,7 +21,7 @@ const DistanceFilter = ({ selectedDistance, onDistanceChange, isCollapsed, onTog
   };
 
   return (
-    <div className="border border-border rounded-lg bg-surface">
+    <div className="border border-default-border rounded-lg bg-surface">
       {/* Header */}
       <button
         onClick={onToggleCollapse}
@@ -59,7 +59,7 @@ const DistanceFilter = ({ selectedDistance, onDistanceChange, isCollapsed, onTog
                   onClick={() => handleDistanceSelect(option.value)}
                   className={`w-full flex items-center space-x-3 p-3 rounded-lg border transition-all duration-200 ${
                     isSelected 
-                      ? 'border-primary bg-primary-50 hover:bg-primary-100' :'border-border hover:border-border-dark hover:bg-surface-secondary'
+                      ? 'border-primary bg-primary-50 hover:bg-primary-100' :'border-default-border hover:border-default-border-dark hover:bg-surface-secondary'
                   }`}
                 >
                   <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
@@ -86,7 +86,7 @@ const DistanceFilter = ({ selectedDistance, onDistanceChange, isCollapsed, onTog
           </div>
 
           {/* Distance Slider Alternative */}
-          <div className="pt-3 border-t border-border">
+          <div className="pt-3 border-t border-default-border">
             <label className="block text-xs font-medium text-text-primary mb-2">
               Custom Distance: {selectedDistance}km
             </label>
@@ -107,7 +107,7 @@ const DistanceFilter = ({ selectedDistance, onDistanceChange, isCollapsed, onTog
           </div>
 
           {/* Travel Time Estimates */}
-          <div className="pt-3 border-t border-border">
+          <div className="pt-3 border-t border-default-border">
             <p className="text-xs font-medium text-text-primary mb-2">
               Estimated Travel Time
             </p>

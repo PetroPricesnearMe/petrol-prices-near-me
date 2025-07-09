@@ -45,7 +45,7 @@ const FileUploadZone = ({ onFileSelect, isUploading, uploadProgress }) => {
         className={`
           relative border-2 border-dashed rounded-xl p-8 lg:p-12 text-center transition-all duration-300
           ${isDragOver 
-            ? 'border-primary bg-primary-50 scale-105' :'border-border hover:border-primary-300 bg-surface'
+            ? 'border-primary bg-primary-50 scale-105' :'border-default-border hover:border-primary-300 bg-surface'
           }
           ${isUploading ? 'pointer-events-none opacity-75' : 'cursor-pointer'}
         `}

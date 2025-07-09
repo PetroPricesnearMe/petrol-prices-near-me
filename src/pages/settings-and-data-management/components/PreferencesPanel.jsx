@@ -34,7 +34,7 @@ const PreferencesPanel = ({ preferences, onPreferenceChange }) => {
         <select
           value={preferences.defaultFuelType}
           onChange={(e) => onPreferenceChange('defaultFuelType', e.target.value)}
-          className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+          className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
         >
           {fuelTypes.map((type) => (
             <option key={type.value} value={type.value}>
@@ -55,7 +55,7 @@ const PreferencesPanel = ({ preferences, onPreferenceChange }) => {
         <select
           value={preferences.measurementUnits}
           onChange={(e) => onPreferenceChange('measurementUnits', e.target.value)}
-          className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+          className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
         >
           {measurementUnits.map((unit) => (
             <option key={unit.value} value={unit.value}>
@@ -96,7 +96,7 @@ const PreferencesPanel = ({ preferences, onPreferenceChange }) => {
         <select
           value={preferences.refreshInterval}
           onChange={(e) => onPreferenceChange('refreshInterval', e.target.value)}
-          className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+          className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
         >
           {refreshIntervals.map((interval) => (
             <option key={interval.value} value={interval.value}>

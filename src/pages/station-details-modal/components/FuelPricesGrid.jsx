@@ -32,7 +32,7 @@ const FuelPricesGrid = ({ fuelPrices }) => {
         {fuelPrices.map((fuel, index) => (
           <div 
             key={index}
-            className="p-4 bg-surface-secondary rounded-lg border border-border hover:shadow-elevation-2 transition-shadow duration-200"
+            className="p-4 bg-surface-secondary rounded-lg border border-default-border hover:shadow-elevation-2 transition-shadow duration-200"
           >
             <div className="flex items-center justify-between mb-2">
               <div>

@@ -61,7 +61,7 @@ const DataManagementPanel = () => {
           {uploadHistory.map((upload) => (
             <div 
               key={upload.id}
-              className="flex items-center justify-between p-4 bg-surface-secondary rounded-lg border border-border"
+              className="flex items-center justify-between p-4 bg-surface-secondary rounded-lg border border-default-border"
             >
               <div className="flex items-center space-x-3">
                 <div className="flex items-center justify-center w-10 h-10 bg-primary-100 rounded-lg">
@@ -134,6 +134,7 @@ const DataManagementPanel = () => {
           Storage Usage
         </h4>
         <div className="p-4 bg-surface-secondary rounded-lg border border-border">
+        <div className="p-4 bg-surface-secondary rounded-lg border border-default-border">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm text-text-secondary">Data Storage</span>
             <span className="text-sm font-medium text-text-primary">2.4 MB / 50 MB</span>

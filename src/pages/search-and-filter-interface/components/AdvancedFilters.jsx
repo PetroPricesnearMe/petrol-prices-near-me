@@ -82,7 +82,7 @@ const AdvancedFilters = ({
   };
 
   return (
-    <div className="border border-border rounded-lg bg-surface">
+    <div className="border border-default-border rounded-lg bg-surface">
       {/* Header */}
       <button
         onClick={onToggleCollapse}
@@ -133,7 +133,7 @@ const AdvancedFilters = ({
                     key={brand.id}
                     className={`flex items-center space-x-2 p-2 rounded-lg border cursor-pointer transition-all duration-200 ${
                       isSelected 
-                        ? 'border-primary bg-primary-50' :'border-border hover:border-border-dark hover:bg-surface-secondary'
+                        ? 'border-primary bg-primary-50' :'border-default-border hover:border-default-border-dark hover:bg-surface-secondary'
                     }`}
                   >
                     <Input
@@ -168,7 +168,7 @@ const AdvancedFilters = ({
                     key={option.id}
                     className={`flex items-center space-x-3 p-3 rounded-lg border cursor-pointer transition-all duration-200 ${
                       isSelected 
-                        ? 'border-primary bg-primary-50' :'border-border hover:border-border-dark hover:bg-surface-secondary'
+                        ? 'border-primary bg-primary-50' :'border-default-border hover:border-default-border-dark hover:bg-surface-secondary'
                     }`}
                   >
                     <Input
@@ -217,7 +217,7 @@ const AdvancedFilters = ({
                     key={amenity.id}
                     className={`flex items-center space-x-3 p-3 rounded-lg border cursor-pointer transition-all duration-200 ${
                       isSelected 
-                        ? 'border-primary bg-primary-50' :'border-border hover:border-border-dark hover:bg-surface-secondary'
+                        ? 'border-primary bg-primary-50' :'border-default-border hover:border-default-border-dark hover:bg-surface-secondary'
                     }`}
                   >
                     <Input
@@ -266,7 +266,7 @@ const AdvancedFilters = ({
                     key={method.id}
                     className={`flex items-center space-x-2 p-2 rounded-lg border cursor-pointer transition-all duration-200 ${
                       isSelected 
-                        ? 'border-primary bg-primary-50' :'border-border hover:border-border-dark hover:bg-surface-secondary'
+                        ? 'border-primary bg-primary-50' :'border-default-border hover:border-default-border-dark hover:bg-surface-secondary'
                     }`}
                   >
                     <Input

@@ -71,9 +71,9 @@ module.exports = {
         'error-foreground': '#FFFFFF', // white
 
         // Border Colors
-        'border': '#E2E8F0', // slate-200
-        'border-light': '#F1F5F9', // slate-100
-        'border-dark': '#CBD5E1', // slate-300
+        'default-border': '#E2E8F0', // slate-200
+        'default-border-light': '#F1F5F9', // slate-100
+        'default-border-dark': '#CBD5E1', // slate-300
       },
       fontFamily: {
         'heading': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],

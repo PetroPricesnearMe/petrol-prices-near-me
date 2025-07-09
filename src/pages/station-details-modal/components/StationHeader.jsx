@@ -16,7 +16,7 @@ const StationHeader = ({ station, onClose }) => {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 lg:p-6 border-b border-border bg-surface">
+    <div className="flex items-center justify-between p-4 lg:p-6 border-b border-default-border bg-surface">
       <div className="flex items-center space-x-4">
         <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-lg overflow-hidden bg-surface-secondary flex-shrink-0">
           <Image

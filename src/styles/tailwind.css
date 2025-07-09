@@ -70,9 +70,9 @@
     --color-error-foreground: #FFFFFF; /* white */
 
     /* Border Colors */
-    --color-border: #E2E8F0; /* slate-200 */
-    --color-border-light: #F1F5F9; /* slate-100 */
-    --color-border-dark: #CBD5E1; /* slate-300 */
+    --color-default-border: #E2E8F0; /* slate-200 */
+    --color-default-border-light: #F1F5F9; /* slate-100 */
+    --color-default-border-dark: #CBD5E1; /* slate-300 */
 
     /* Shadow Colors */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -113,7 +113,7 @@
   }
 
   * {
-    @apply border-border;
+    @apply border-default-border;
   }
 
   body {

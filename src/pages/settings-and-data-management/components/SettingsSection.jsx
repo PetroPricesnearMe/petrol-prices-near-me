@@ -3,7 +3,7 @@ import Icon from '../../../components/AppIcon';
 
 const SettingsSection = ({ title, icon, children, isExpanded, onToggle, className = '' }) => {
   return (
-    <div className={`bg-surface border border-border rounded-lg shadow-elevation-1 ${className}`}>
+    <div className={`bg-surface border border-default-border rounded-lg shadow-elevation-1 ${className}`}>
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between p-4 lg:p-6 text-left hover:bg-surface-secondary transition-colors duration-200"
@@ -24,7 +24,7 @@ const SettingsSection = ({ title, icon, children, isExpanded, onToggle, classNam
       </button>
       
       {isExpanded && (
-        <div className="px-4 pb-4 lg:px-6 lg:pb-6 border-t border-border animate-fade-in">
+        <div className="px-4 pb-4 lg:px-6 lg:pb-6 border-t border-default-border animate-fade-in">
           <div className="pt-4 space-y-4">
             {children}
           </div>
