@@ -186,3 +186,39 @@ const SearchPanel = ({ isOpen, onClose, onSearch, onFilterChange }) => {
                 value={sortBy}
                 onChange={(e) => handleInputChange('sortBy', e.target.value)}
                 className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+              >
+                {sortOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          {/* Footer Actions */}
+          <div className="p-4 lg:p-6 border-t border-default-border">
+            <div className="flex space-x-4">
+              <Button
+                variant="outline"
+                onClick={handleReset}
+                className="flex-1"
+              >
+                Reset
+              </Button>
+              <Button
+                variant="primary"
+                onClick={handleSearch}
+                className="flex-1"
+              >
+                Search
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SearchPanel;
