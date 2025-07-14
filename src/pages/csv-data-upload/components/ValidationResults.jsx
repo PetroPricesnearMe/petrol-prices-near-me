@@ -83,15 +83,15 @@ const ValidationResults = ({ validationResults, onRetry }) => {
 
       {/* Issues List */}
       {(errors?.length > 0 || warnings?.length > 0) && (
-        <div className="bg-surface border border-default-border rounded-xl overflow-hidden">
-          <div className="p-4 border-b border-default-border bg-surface-secondary">
+        <div className="bg-surface border border-border rounded-xl overflow-hidden">
+          <div className="p-4 border-b border-border bg-surface-secondary">
             <h4 className="font-heading font-semibold text-text-primary">
               Validation Issues
             </h4>
           </div>
           
           <div className="max-h-96 overflow-y-auto">
-            <div className="divide-y divide-default-border">
+            <div className="divide-y divide-border">
               {/* Errors */}
               {errors?.map((error, index) => (
                 <div key={`error-${index}`} className="p-4">

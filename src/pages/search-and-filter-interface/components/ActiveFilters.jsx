@@ -170,7 +170,7 @@ const ActiveFilters = ({
   }
 
   return (
-    <div className="bg-surface border border-default-border rounded-lg p-4 space-y-4">
+    <div className="bg-surface border border-border rounded-lg p-4 space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -215,7 +215,7 @@ const ActiveFilters = ({
       </div>
 
       {/* Results Summary */}
-      <div className="pt-3 border-t border-default-border">
+      <div className="pt-3 border-t border-border">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Icon name="MapPin" size={16} className="text-text-muted" />

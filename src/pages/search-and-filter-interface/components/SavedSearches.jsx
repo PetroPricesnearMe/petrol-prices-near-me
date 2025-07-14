@@ -136,7 +136,7 @@ const SavedSearches = ({ onLoadSearch, onSaveCurrentSearch, currentFilters }) =>
 
       {/* Save Dialog */}
       {showSaveDialog && (
-        <div className="p-4 bg-surface-secondary border border-default-border rounded-lg space-y-3">
+        <div className="p-4 bg-surface-secondary border border-border rounded-lg space-y-3">
           <div className="flex items-center justify-between">
             <h4 className="text-sm font-medium text-text-primary">
               Save Current Search
@@ -192,7 +192,7 @@ const SavedSearches = ({ onLoadSearch, onSaveCurrentSearch, currentFilters }) =>
           {savedSearches.map((search) => (
             <div
               key={search.id}
-              className="p-4 bg-surface border border-default-border rounded-lg hover:border-default-border-dark transition-colors duration-200"
+              className="p-4 bg-surface border border-border rounded-lg hover:border-border-dark transition-colors duration-200"
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1 min-w-0">
@@ -261,7 +261,7 @@ const SavedSearches = ({ onLoadSearch, onSaveCurrentSearch, currentFilters }) =>
 
       {/* Quick Access Suggestions */}
       {savedSearches.length > 0 && (
-        <div className="pt-4 border-t border-default-border">
+        <div className="pt-4 border-t border-border">
           <p className="text-xs font-medium text-text-primary mb-2">
             Quick Access
           </p>

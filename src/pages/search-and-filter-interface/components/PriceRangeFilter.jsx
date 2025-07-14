@@ -90,7 +90,7 @@ const PriceRangeFilter = ({ priceRange, onPriceRangeChange, isCollapsed, onToggl
   };
 
   return (
-    <div className="border border-default-border rounded-lg bg-surface">
+    <div className="border border-border rounded-lg bg-surface">
       {/* Header */}
       <button
         onClick={onToggleCollapse}
@@ -238,7 +238,7 @@ const PriceRangeFilter = ({ priceRange, onPriceRangeChange, isCollapsed, onToggl
           </div>
 
           {/* Price Statistics */}
-          <div className="pt-3 border-t border-default-border">
+          <div className="pt-3 border-t border-border">
             <div className="grid grid-cols-2 gap-4 text-center">
               <div className="p-2 bg-surface-secondary rounded-lg">
                 <p className="text-xs text-text-secondary">Average Price</p>

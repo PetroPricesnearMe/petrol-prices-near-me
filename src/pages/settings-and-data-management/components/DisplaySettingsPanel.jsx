@@ -35,7 +35,7 @@ const DisplaySettingsPanel = ({ displaySettings, onDisplaySettingChange }) => {
               className={`
                 relative flex items-start p-3 border rounded-lg cursor-pointer transition-all duration-200
                 ${displaySettings.mapTheme === theme.value
-                  ? 'border-primary bg-primary-50' :'border-default-border bg-surface hover:bg-surface-secondary'
+                  ? 'border-primary bg-primary-50' :'border-border bg-surface hover:bg-surface-secondary'
                 }
               `}
             >
@@ -82,7 +82,7 @@ const DisplaySettingsPanel = ({ displaySettings, onDisplaySettingChange }) => {
               className={`
                 flex items-center justify-between p-3 border rounded-lg cursor-pointer transition-all duration-200
                 ${displaySettings.priceFormat === format.value
-                  ? 'border-primary bg-primary-50' :'border-default-border bg-surface hover:bg-surface-secondary'
+                  ? 'border-primary bg-primary-50' :'border-border bg-surface hover:bg-surface-secondary'
                 }
               `}
             >
@@ -113,7 +113,7 @@ const DisplaySettingsPanel = ({ displaySettings, onDisplaySettingChange }) => {
         <select
           value={displaySettings.markerClustering}
           onChange={(e) => onDisplaySettingChange('markerClustering', e.target.value)}
-          className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+          className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
         >
           {clusteringOptions.map((option) => (
             <option key={option.value} value={option.value}>

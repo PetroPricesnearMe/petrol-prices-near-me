@@ -4,7 +4,7 @@ const LoadingSkeleton = () => {
   return (
     <div className="animate-pulse">
       {/* Header Skeleton */}
-      <div className="flex items-center justify-between p-4 lg:p-6 border-b border-default-border">
+      <div className="flex items-center justify-between p-4 lg:p-6 border-b border-border">
         <div className="flex items-center space-x-4">
           <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-200 rounded-lg"></div>
           <div className="space-y-2">
@@ -71,7 +71,7 @@ const LoadingSkeleton = () => {
           {/* Expandable Sections Skeleton */}
           <div className="space-y-2">
             {[1, 2].map((item) => (
-              <div key={item} className="border border-default-border rounded-lg">
+              <div key={item} className="border border-border rounded-lg">
                 <div className="flex items-center justify-between p-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-4 h-4 bg-secondary-200 rounded"></div>

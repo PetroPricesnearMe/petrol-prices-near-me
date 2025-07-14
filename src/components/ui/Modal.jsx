@@ -69,7 +69,7 @@ const Modal = ({
         >
           {/* Header */}
           {(title || showCloseButton) && (
-            <div className="flex items-center justify-between p-6 border-b border-default-border">
+            <div className="flex items-center justify-between p-6 border-b border-border">
               {title && (
                 <h2 className="text-xl font-heading font-semibold text-text-primary">
                   {title}
@@ -94,7 +94,7 @@ const Modal = ({
 
           {/* Footer */}
           {footer && (
-            <div className="flex items-center justify-end space-x-3 p-6 border-t border-default-border bg-surface-secondary rounded-b-xl">
+            <div className="flex items-center justify-end space-x-3 p-6 border-t border-border bg-surface-secondary rounded-b-xl">
               {footer}
             </div>
           )}

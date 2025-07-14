@@ -66,7 +66,7 @@ const StationInfo = ({ station }) => {
       {/* Expandable Sections */}
       <div className="space-y-2">
         {/* Operating Hours */}
-        <div className="border border-default-border rounded-lg">
+        <div className="border border-border rounded-lg">
           <button
             onClick={() => toggleSection('hours')}
             className="w-full flex items-center justify-between p-4 text-left hover:bg-surface-secondary transition-colors duration-200"
@@ -82,7 +82,7 @@ const StationInfo = ({ station }) => {
             />
           </button>
           {expandedSection === 'hours' && (
-            <div className="px-4 pb-4 border-t border-default-border">
+            <div className="px-4 pb-4 border-t border-border">
               <div className="space-y-2 mt-3">
                 {Object.entries(operatingHours).map(([day, hours]) => (
                   <div key={day} className="flex justify-between items-center">
@@ -96,7 +96,7 @@ const StationInfo = ({ station }) => {
         </div>
 
         {/* Contact Information */}
-        <div className="border border-default-border rounded-lg">
+        <div className="border border-border rounded-lg">
           <button
             onClick={() => toggleSection('contact')}
             className="w-full flex items-center justify-between p-4 text-left hover:bg-surface-secondary transition-colors duration-200"
@@ -112,7 +112,7 @@ const StationInfo = ({ station }) => {
             />
           </button>
           {expandedSection === 'contact' && (
-            <div className="px-4 pb-4 border-t border-default-border">
+            <div className="px-4 pb-4 border-t border-border">
               <div className="space-y-3 mt-3">
                 <div className="flex items-center space-x-3">
                   <Icon name="Phone" size={16} className="text-text-muted" />

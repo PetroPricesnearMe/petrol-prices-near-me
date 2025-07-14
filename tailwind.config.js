@@ -1,4 +1,3 @@
-// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,46 +8,40 @@ module.exports = {
     extend: {
       colors: {
         // Primary Colors
-        'primary': {
-          DEFAULT: '#2563EB',
-          50: '#EFF6FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          500: '#3B82F6',
-          600: '#2563EB',
-          700: '#1D4ED8',
-          800: '#1E40AF',
-          900: '#1E3A8A',
-          foreground: '#FFFFFF',
-        },
+        'primary': '#2563EB',
+        'primary-50': '#EFF6FF',
+        'primary-100': '#DBEAFE',
+        'primary-200': '#BFDBFE',
+        'primary-500': '#3B82F6',
+        'primary-600': '#2563EB',
+        'primary-700': '#1D4ED8',
+        'primary-800': '#1E40AF',
+        'primary-900': '#1E3A8A',
+        'primary-foreground': '#FFFFFF',
 
         // Secondary Colors
-        'secondary': {
-          DEFAULT: '#64748B',
-          50: '#F8FAFC',
-          100: '#F1F5F9',
-          200: '#E2E8F0',
-          300: '#CBD5E1',
-          400: '#94A3B8',
-          500: '#64748B',
-          600: '#475569',
-          700: '#334155',
-          800: '#1E293B',
-          900: '#0F172A',
-          foreground: '#FFFFFF',
-        },
+        'secondary': '#64748B',
+        'secondary-50': '#F8FAFC',
+        'secondary-100': '#F1F5F9',
+        'secondary-200': '#E2E8F0',
+        'secondary-300': '#CBD5E1',
+        'secondary-400': '#94A3B8',
+        'secondary-500': '#64748B',
+        'secondary-600': '#475569',
+        'secondary-700': '#334155',
+        'secondary-800': '#1E293B',
+        'secondary-900': '#0F172A',
+        'secondary-foreground': '#FFFFFF',
 
         // Accent Colors
-        'accent': {
-          DEFAULT: '#059669',
-          50: '#ECFDF5',
-          100: '#D1FAE5',
-          200: '#A7F3D0',
-          500: '#10B981',
-          600: '#059669',
-          700: '#047857',
-          foreground: '#FFFFFF',
-        },
+        'accent': '#059669',
+        'accent-50': '#ECFDF5',
+        'accent-100': '#D1FAE5',
+        'accent-200': '#A7F3D0',
+        'accent-500': '#10B981',
+        'accent-600': '#059669',
+        'accent-700': '#047857',
+        'accent-foreground': '#FFFFFF',
 
         // Background Colors
         'background': '#F8FAFC',
@@ -62,32 +55,20 @@ module.exports = {
         'text-inverse': '#FFFFFF',
 
         // Status Colors
-        'success': {
-          DEFAULT: '#10B981',
-          50: '#ECFDF5',
-          100: '#D1FAE5',
-          600: '#059669',
-          700: '#047857',
-          foreground: '#FFFFFF',
-        },
+        'success': '#10B981',
+        'success-50': '#ECFDF5',
+        'success-100': '#D1FAE5',
+        'success-foreground': '#FFFFFF',
 
-        'warning': {
-          DEFAULT: '#F59E0B',
-          50: '#FFFBEB',
-          100: '#FEF3C7',
-          600: '#D97706',
-          700: '#B45309',
-          foreground: '#FFFFFF',
-        },
+        'warning': '#F59E0B',
+        'warning-50': '#FFFBEB',
+        'warning-100': '#FEF3C7',
+        'warning-foreground': '#FFFFFF',
 
-        'error': {
-          DEFAULT: '#EF4444',
-          50: '#FEF2F2',
-          100: '#FEE2E2',
-          600: '#DC2626',
-          700: '#B91C1C',
-          foreground: '#FFFFFF',
-        },
+        'error': '#EF4444',
+        'error-50': '#FEF2F2',
+        'error-100': '#FEE2E2',
+        'error-foreground': '#FFFFFF',
 
         // Border Colors
         'border': '#E2E8F0',
@@ -95,11 +76,11 @@ module.exports = {
         'border-dark': '#CBD5E1',
       },
       fontFamily: {
-        'heading': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        'body': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        'caption': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'heading': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'body': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'caption': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         'data': ['JetBrains Mono', 'Courier New', 'monospace'],
-        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         'mono': ['JetBrains Mono', 'Courier New', 'monospace'],
       },
       fontSize: {
@@ -173,10 +154,12 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/container-queries'),
-    require('@tailwindcss/line-clamp'),
   ],
-};
+  variants: {
+    animation: ['responsive', 'motion-safe', 'motion-reduce']
+  }
+}

@@ -61,7 +61,7 @@ const DataManagementPanel = () => {
           {uploadHistory.map((upload) => (
             <div 
               key={upload.id}
-              className="flex items-center justify-between p-4 bg-surface-secondary rounded-lg border border-default-border"
+              className="flex items-center justify-between p-4 bg-surface-secondary rounded-lg border border-border"
             >
               <div className="flex items-center space-x-3">
                 <div className="flex items-center justify-center w-10 h-10 bg-primary-100 rounded-lg">
@@ -78,7 +78,8 @@ const DataManagementPanel = () => {
                 <span className={`
                   inline-flex items-center px-2 py-1 rounded-md text-xs font-medium
                   ${upload.status === 'active' ?'bg-success-100 text-success-700' :'bg-secondary-100 text-secondary-700'
-                  }`}>
+                  }
+                `}>
                   {upload.status === 'active' ? 'Active' : 'Archived'}
                 </span>
                 <Button
@@ -132,7 +133,7 @@ const DataManagementPanel = () => {
         <h4 className="text-md font-heading font-medium text-text-primary mb-4">
           Storage Usage
         </h4>
-        <div className="p-4 bg-surface-secondary rounded-lg border border-default-border">
+        <div className="p-4 bg-surface-secondary rounded-lg border border-border">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm text-text-secondary">Data Storage</span>
             <span className="text-sm font-medium text-text-primary">2.4 MB / 50 MB</span>

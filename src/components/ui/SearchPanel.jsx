@@ -102,7 +102,7 @@ const SearchPanel = ({ isOpen, onClose, onSearch, onFilterChange }) => {
       `}>
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 lg:p-6 border-b border-default-border">
+          <div className="flex items-center justify-between p-4 lg:p-6 border-b border-border">
             <div className="flex items-center space-x-2">
               <Icon name="Search" size={20} className="text-primary" />
               <h2 className="text-lg font-heading font-semibold text-text-primary">
@@ -149,7 +149,7 @@ const SearchPanel = ({ isOpen, onClose, onSearch, onFilterChange }) => {
               <select
                 value={selectedFuelType}
                 onChange={(e) => handleInputChange('fuelType', e.target.value)}
-                className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+                className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
               >
                 {fuelTypes.map((type) => (
                   <option key={type.value} value={type.value}>
@@ -167,7 +167,7 @@ const SearchPanel = ({ isOpen, onClose, onSearch, onFilterChange }) => {
               <select
                 value={maxDistance}
                 onChange={(e) => handleInputChange('distance', e.target.value)}
-                className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+                className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
               >
                 {distanceOptions.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -185,7 +185,7 @@ const SearchPanel = ({ isOpen, onClose, onSearch, onFilterChange }) => {
               <select
                 value={sortBy}
                 onChange={(e) => handleInputChange('sortBy', e.target.value)}
-                className="w-full px-3 py-2 border border-default-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
+                className="w-full px-3 py-2 border border-border rounded-lg bg-surface text-text-primary focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200"
               >
                 {sortOptions.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -194,13 +194,86 @@ const SearchPanel = ({ isOpen, onClose, onSearch, onFilterChange }) => {
                 ))}
               </select>
             </div>
+
+            {/* Advanced Filters Toggle */}
+            <div className="pt-4 border-t border-border">
+              <Button
+                variant="ghost"
+                size="sm"
+                iconName={showAdvanced ? "ChevronUp" : "ChevronDown"}
+                iconPosition="right"
+                onClick={() => setShowAdvanced(!showAdvanced)}
+                className="w-full justify-between"
+              >
+                Advanced Filters
+              </Button>
+              
+              {showAdvanced && (
+                <div className="mt-4 space-y-4 animate-fade-in">
+                  {/* Price Range */}
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium text-text-primary">
+                      Price Range (per litre)
+                    </label>
+                    <div className="flex space-x-2">
+                      <Input
+                        type="number"
+                        placeholder="Min"
+                        step="0.01"
+                        min="0"
+                        className="flex-1"
+                      />
+                      <span className="flex items-center text-text-muted">to</span>
+                      <Input
+                        type="number"
+                        placeholder="Max"
+                        step="0.01"
+                        min="0"
+                        className="flex-1"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Brand Filter */}
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium text-text-primary">
+                      Preferred Brands
+                    </label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {['Shell', 'BP', 'Caltex', '7-Eleven', 'Mobil', 'United'].map((brand) => (
+                        <label key={brand} className="flex items-center space-x-2">
+                          <Input type="checkbox" className="w-4 h-4" />
+                          <span className="text-sm text-text-secondary">{brand}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Amenities */}
+                  <div className="space-y-2">
+                    <label className="block text-sm font-medium text-text-primary">
+                      Amenities
+                    </label>
+                    <div className="space-y-2">
+                      {['24/7 Open', 'Car Wash', 'Convenience Store', 'ATM', 'Restrooms'].map((amenity) => (
+                        <label key={amenity} className="flex items-center space-x-2">
+                          <Input type="checkbox" className="w-4 h-4" />
+                          <span className="text-sm text-text-secondary">{amenity}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Footer Actions */}
-          <div className="p-4 lg:p-6 border-t border-default-border">
-            <div className="flex space-x-4">
+          <div className="p-4 lg:p-6 border-t border-border bg-surface-secondary">
+            <div className="flex space-x-3">
               <Button
                 variant="outline"
+                size="sm"
                 onClick={handleReset}
                 className="flex-1"
               >
@@ -208,11 +281,21 @@ const SearchPanel = ({ isOpen, onClose, onSearch, onFilterChange }) => {
               </Button>
               <Button
                 variant="primary"
+                size="sm"
+                iconName="Search"
+                iconPosition="left"
                 onClick={handleSearch}
                 className="flex-1"
               >
                 Search
               </Button>
+            </div>
+            
+            {/* Quick Stats */}
+            <div className="mt-3 text-center">
+              <span className="text-xs text-text-muted">
+                Found 24 stations within {maxDistance}km
+              </span>
             </div>
           </div>
         </div>

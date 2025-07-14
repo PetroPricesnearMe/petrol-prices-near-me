@@ -69,7 +69,7 @@ const FuelTypeFilter = ({ selectedFuelTypes, onFuelTypeChange, isCollapsed, onTo
   const totalCount = fuelTypes.length;
 
   return (
-    <div className="border border-default-border rounded-lg bg-surface">
+    <div className="border border-border rounded-lg bg-surface">
       {/* Header */}
       <button
         onClick={onToggleCollapse}
@@ -126,7 +126,7 @@ const FuelTypeFilter = ({ selectedFuelTypes, onFuelTypeChange, isCollapsed, onTo
                   key={fuel.id}
                   className={`flex items-center space-x-3 p-3 rounded-lg border transition-all duration-200 cursor-pointer ${
                     isSelected 
-                      ? 'border-primary bg-primary-50 hover:bg-primary-100' :'border-default-border hover:border-default-border-dark hover:bg-surface-secondary'
+                      ? 'border-primary bg-primary-50 hover:bg-primary-100' :'border-border hover:border-border-dark hover:bg-surface-secondary'
                   }`}
                 >
                   <Input
@@ -165,7 +165,7 @@ const FuelTypeFilter = ({ selectedFuelTypes, onFuelTypeChange, isCollapsed, onTo
           </div>
 
           {/* Popular Combinations */}
-          <div className="pt-3 border-t border-default-border">
+          <div className="pt-3 border-t border-border">
             <p className="text-xs font-medium text-text-primary mb-2">
               Popular Combinations
             </p>

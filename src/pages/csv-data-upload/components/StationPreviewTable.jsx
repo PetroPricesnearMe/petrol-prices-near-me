@@ -113,10 +113,10 @@ const StationPreviewTable = ({ stations, onSelectionChange, onApplyToMap }) => {
       </div>
 
       {/* Table */}
-      <div className="bg-surface border border-default-border rounded-xl overflow-hidden">
+      <div className="bg-surface border border-border rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="bg-surface-secondary border-b border-default-border">
+            <thead className="bg-surface-secondary border-b border-border">
               <tr>
                 <th className="p-3 text-left">
                   <input
@@ -176,7 +176,7 @@ const StationPreviewTable = ({ stations, onSelectionChange, onApplyToMap }) => {
               </tr>
             </thead>
             
-            <tbody className="divide-y divide-default-border">
+            <tbody className="divide-y divide-border">
               {sortedStations.map((station, index) => (
                 <tr 
                   key={station.id || index}

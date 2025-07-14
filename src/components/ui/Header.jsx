@@ -21,9 +21,8 @@ const Header = () => {
 
   const navigationItems = [
     { path: '/map-dashboard', label: 'Map', icon: 'Map' },
-    { path: '/station-listing', label: 'Station List', icon: 'List' },
-    { path: '/search-and-filter-interface', label: 'Search', icon: 'Search' },
     { path: '/csv-data-upload', label: 'Upload Data', icon: 'Upload' },
+    { path: '/settings-and-data-management', label: 'Settings', icon: 'Settings' },
   ];
 
   return (
@@ -33,7 +32,7 @@ const Header = () => {
           {/* Logo and Brand */}
           <div className="flex items-center">
             <Link 
-              to="/" 
+              to="/map-dashboard" 
               className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200"
               onClick={closeMobileMenu}
             >
@@ -42,7 +41,7 @@ const Header = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg lg:text-xl font-heading font-semibold text-text-primary">
-                  Petrol Prices Near Me
+                  Melbourne Fuel Finder
                 </span>
                 <span className="text-xs text-text-secondary hidden sm:block">
                   Find the best fuel prices
@@ -85,7 +84,8 @@ const Header = () => {
               size="sm"
               iconName="Search"
               onClick={() => {
-                window.location.href = '/search-and-filter-interface';
+                // Toggle search panel - this would be handled by parent component
+                console.log('Toggle search panel');
               }}
             >
               Search
@@ -146,7 +146,7 @@ const Header = () => {
                   fullWidth
                   onClick={() => {
                     closeMobileMenu();
-                    window.location.href = '/search-and-filter-interface';
+                    console.log('Toggle search panel');
                   }}
                 >
                   Search Stations
