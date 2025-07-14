@@ -1,3 +1,4 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+<<<<<<< HEAD
         // Primary Colors
         'primary': '#2563EB',
         'primary-50': '#EFF6FF',
@@ -150,16 +152,25 @@ module.exports = {
       transitionTimingFunction: {
         'ease-out': 'cubic-bezier(0, 0, 0.2, 1)',
         'ease-in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+=======
+        primary: '#16a34a', // green (emerald-600) — change to match your brand
+>>>>>>> 2d5c89b23449dd1702ae9f3be9e47a098eda2146
       },
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/container-queries'),
+<<<<<<< HEAD
   ],
   variants: {
     animation: ['responsive', 'motion-safe', 'motion-reduce']
   }
 }
+=======
+    require('@tailwindcss/line-clamp'),
+  ],
+};
+>>>>>>> 2d5c89b23449dd1702ae9f3be9e47a098eda2146
