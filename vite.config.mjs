@@ -43,6 +43,8 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // Add this line to explicitly set the build output directory for Workbox
+        globDirectory: 'dist',
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/api\.*/i,
