@@ -1,24 +1,42 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Map from './pages/Map';
-import Header from './components/Header';
-import Prices from './pages/Prices';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { inject } from "@vercel/analytics";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-export default function App() {
+// Import your pages/components
+import HomePage from "@/pages/HomePage";
+import StationsPage from "@/pages/StationsPage";
+// Add more imports as needed...
+
+// Inject Vercel Analytics
+inject();
+
+const App = () => {
   return (
-    <div>
-      <Header />
+    <>
+      {/* Google Analytics tracking */}
+      <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXX');
+          `}
+        </script>
+      </Helmet>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-		<Route path="/prices" element={<Prices />} />
-      </Routes>
-    </div>
+      {/* React App Routing */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/stations" element={<StationsPage />} />
+          {/* Add more routes as needed */}
+        </Routes>
+      </Router>
+    </>
   );
-}
+};
+
+export default App;
