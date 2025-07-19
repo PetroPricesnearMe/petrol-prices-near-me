@@ -42,12 +42,11 @@ export default defineConfig({
         ]
       },
       workbox: {
+        globDirectory: 'dist', // Explicitly set
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
-        // Add this line to explicitly set the build output directory for Workbox
-        globDirectory: 'dist',
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/api\.*/i,
+            urlPattern: /^https:\/\/api\..*/i,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'api-cache',
@@ -61,7 +60,7 @@ export default defineConfig({
             }
           },
           {
-            urlPattern: /^https:\/\/.*\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+            urlPattern: /^https:\/\/.*\.(?:png|jpg|jpeg|svg|gif|webp)$/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'images-cache',
